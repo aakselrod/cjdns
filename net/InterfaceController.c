@@ -939,6 +939,7 @@ int InterfaceController_getPeerStats(struct InterfaceController* ifController,
             struct InterfaceController_PeerStats* s = &stats[xcount];
             xcount++;
             Bits_memcpy(&s->addr, &peer->addr, sizeof(struct Address));
+            s->nativeAddr = String_new(Sockaddr_print(peer->lladdr, alloc), alloc);
             s->bytesOut = peer->bytesOut;
             s->bytesIn = peer->bytesIn;
             s->timeOfLastMessage = peer->timeOfLastMessage;

@@ -78,6 +78,7 @@ static inline char* InterfaceController_stateString(enum InterfaceController_Pee
 struct InterfaceController_PeerStats
 {
     struct Address addr;
+    String* nativeAddr;
     int state;
     uint64_t timeOfLastMessage;
     uint64_t bytesOut;

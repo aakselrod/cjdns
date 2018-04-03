@@ -53,6 +53,7 @@ static void adminPeerStats(Dict* args, void* vcontext, String* txid, struct Allo
         Dict_putIntC(d, "sendKbps", stats[i].sendKbps, alloc);
 
         Dict_putStringC(d, "addr", Address_toString(&stats[i].addr, alloc), alloc);
+        Dict_putStringC(d, "nativeAddr", stats[i].nativeAddr, alloc);
 
         String* stateString = String_new(InterfaceController_stateString(stats[i].state), alloc);
         Dict_putStringC(d, "state", stateString, alloc);
